@@ -9,7 +9,7 @@ const notaMinima = parseFloat(prompt("Digite a nota mínima: "))
 
 let linhas = ''
 
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', function (e) {
     e.preventDefault()
 
     adicionaLinha()
@@ -24,16 +24,16 @@ function adicionaLinha() {
     if (atividades.includes(inputNomeAtividade.value)) {
         alert(`A atividade ${inputNomeAtividade.value} já foi inserida.`)
     } else {
-    atividades.push(inputNomeAtividade.value)
-    notas.push(parseFloat(inputNotaAtividade.value))
+        atividades.push(inputNomeAtividade.value)
+        notas.push(parseFloat(inputNotaAtividade.value))
 
-    let linha = '<tr>'
-    linha += `<td>${inputNomeAtividade.value}</td>`
-    linha += `<td>${inputNotaAtividade.value}</td>`
-    linha += `<td>${inputNotaAtividade.value >= 7 ? imgAprovado : imgReprovado}</td>`
-    linha += `</tr>`
+        let linha = '<tr>'
+        linha += `<td>${inputNomeAtividade.value}</td>`
+        linha += `<td>${inputNotaAtividade.value}</td>`
+        linha += `<td>${inputNotaAtividade.value >= 7 ? imgAprovado : imgReprovado}</td>`
+        linha += `</tr>`
 
-    linhas += linha
+        linhas += linha
     }
     inputNomeAtividade.value = ''
     inputNotaAtividade.value = ''
@@ -57,7 +57,7 @@ function calculaMediaFinal() {
 
     for (let i = 0; i < notas.length; i++) {
         somaDasNotas += notas[i];
-}
+    }
 
-return somaDasNotas / notas.length
+    return somaDasNotas / notas.length
 }
